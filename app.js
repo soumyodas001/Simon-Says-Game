@@ -53,7 +53,7 @@ function checkAns(idx){
             setTimeout(levelUp,800);
         }
     } else {
-        p1.innerHTML = `Game Over! Your Score : ${level}<br>Press anywhere to start!`;
+        p1.innerHTML = `Game Over!<br>Your Score : ${level}<br>Press anywhere to restart!`;
         if(level > maxScore)
             maxScore = level;
         p2.innerText = `--- Highest Score : ${maxScore} ---`;
@@ -61,7 +61,7 @@ function checkAns(idx){
         setTimeout(() => {
             document.querySelector("body").style.backgroundColor = "white";
         }, 500);
-        setTimeout(reset, 0);
+        setTimeout(reset, 1000);
     }
 }
 

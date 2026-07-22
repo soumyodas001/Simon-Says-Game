@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @layer base {
+    .font-BigShouldersStencil{
+        font-family: "Big Shoulders Stencil", sans-serif;
+    }
+
     .red{
         @apply bg-red-600;
     }
