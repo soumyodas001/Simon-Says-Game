@@ -26,7 +26,3 @@ A simple **Simon Says Game** built with **HTML, Tailwind CSS, and JavaScript**. 
 2. Watch the flashing color sequence.
 3. Repeat the sequence by clicking the colored buttons.
 4. Keep going until you make a mistake.
-
-## 📄 License
-
-This project is licensed under the MIT License.
