@@ -61,7 +61,7 @@ function checkAns(idx){
         setTimeout(() => {
             document.querySelector("body").style.backgroundColor = "white";
         }, 500);
-        setTimeout(reset, 1000);
+        setTimeout(reset, 2000);
     }
 }
 
