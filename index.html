@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="icon" href="./icon.png" type="image/x-icon">
+  </head>
+  <body class="font-[Times] transition ease-in-out">
+    <div class="h-screen w-screen flex justify-center items-center">
+      <div class="h-screen w-fit flex flex-col items-center pt-5">
+        <h1 class="text-center text-4xl font-bold ">Simon Says Game</h1>
+        <p class="text-center text-2xl font-bold mb-5 mt-10">Press any key to start the game</p>
+        <div class="size-80 p-2 grid grid-cols-2 grid-rows-2 gap-2 border-2 rounded-3xl border-gray-400 bg-white *:border-2 *:rounded-2xl *:border-gray-400 *:transition *:ease-in-out">
+          <div id="red" class="red btn"></div>
+          <div id="blue" class="blue btn"></div>
+          <div id="yellow" class="yellow btn"></div>
+          <div id="green" class="green btn"></div>
+        </div>
+        <p id="maxScore" class="text-center text-2xl font-bold mt-10">--- Highest Score ---</p>
+      </div>
+    </div>
+    
+    <!-- Js file -->
+    <script src="./app.js"></script>
+  </body>
+</html>
