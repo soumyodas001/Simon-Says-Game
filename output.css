@@ -31,6 +31,7 @@
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-3xl: 64px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -220,9 +221,6 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -237,9 +235,6 @@
   }
   .h-full {
     height: 100%;
-  }
-  .h-max {
-    height: max-content;
   }
   .h-screen {
     height: 100vh;
@@ -258,6 +253,51 @@
   }
   .border-collapse {
     border-collapse: collapse;
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .animate-\[pulse_1s_linear_infinite\] {
+    animation: pulse 1s linear infinite;
+  }
+  .animate-\[pulse_8s_linear_infinite\] {
+    animation: pulse 8s linear infinite;
+  }
+  .animate-\[pulse_10s_linear_infinite\] {
+    animation: pulse 10s linear infinite;
+  }
+  .animate-\[spin_1s_ease-in-out_infinite\] {
+    animation: spin 1s ease-in-out infinite;
+  }
+  .animate-\[spin_1s_ease-linear_infinite\] {
+    animation: spin 1s ease-linear infinite;
+  }
+  .animate-\[spin_1s_ease_infinite\] {
+    animation: spin 1s ease infinite;
+  }
+  .animate-\[spin_1s_infinite\] {
+    animation: spin 1s infinite;
+  }
+  .animate-\[spin_1s_linear_infinite\] {
+    animation: spin 1s linear infinite;
+  }
+  .animate-\[spin_2s_linear_infinite\] {
+    animation: spin 2s linear infinite;
+  }
+  .animate-\[spin_5s_linear_infinite\] {
+    animation: spin 5s linear infinite;
+  }
+  .animate-\[spin_10s_linear_infinite\] {
+    animation: spin 10s linear infinite;
+  }
+  .animate-\[spin_15s_linear_infinite\] {
+    animation: spin 15s linear infinite;
+  }
+  .animate-\[wiggle_1s_ease-in-out_infinite\] {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+  .animate-pulse {
+    animation: var(--animate-pulse);
   }
   .resize {
     resize: both;
@@ -279,9 +319,6 @@
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
-  }
-  .overflow-scroll {
-    overflow: scroll;
   }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
@@ -347,6 +384,10 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
+  .ease-linear {
+    --tw-ease: linear;
+    transition-timing-function: linear;
+  }
   .select-none {
     -webkit-user-select: none;
     user-select: none;
@@ -385,10 +426,6 @@
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
-    .max-md\:text-4xl {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
-    }
   }
   @media (width < 40rem) {
     .max-sm\:text-2xl {
@@ -398,15 +435,6 @@
     .max-sm\:text-3xl {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
-    }
-    .max-sm\:text-4xl {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
-    }
-  }
-  @media (width >= 48rem) {
-    .md\:mt-8 {
-      margin-top: calc(var(--spacing) * 8);
     }
   }
   @media (width >= 64rem) {
@@ -475,6 +503,26 @@
 }
 @layer components;
 @layer theme;
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -546,9 +594,24 @@
   syntax: "*";
   inherits: false;
 }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
