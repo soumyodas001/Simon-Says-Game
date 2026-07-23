@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 @layer base {
+    .bgShapeClass{
+        @apply max-sm:size-75 max-md:size-95 max-lg:size-115 lg:size-150 absolute overflow-hidden blur-3xl;
+    }
+
+    .bgInnerShapeClass{
+        @apply bg-white overflow-hidden size-[200%] absolute rotate-45 ;
+    }
+    
     .font-BigShouldersStencil{
-        font-family: "Big Shoulders Stencil", sans-serif;
+        font-family: "Big Shoulders Stencil", serif;
     }
 
     .red{

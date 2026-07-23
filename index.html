@@ -10,18 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Bungee&family=Monoton&display=swap" rel="stylesheet">
   </head>
-  <body class="font-serif transition ease-in-out">
-    <div class="h-screen w-screen flex justify-center items-center">
-      <div class="h-screen w-fit flex flex-col items-center pt-8">
-        <h1><pre class="text-center font-[Monoton] max-sm:text-3xl max-md:text-4xl max-lg:text-5xl lg:text-5xl">SIMON    SAYS    GAME</pre></h1>
-        <p class="text-center font-bold mt-20 md:mt-8 mb-4 font-BigShouldersStencil max-sm:text-2xl max-md:text-3xl max-lg:text-4xl lg:text-4xl">Press anywhere to start the game</p>
-        <div class="min-h-80 w-80 p-2 grid grid-cols-2 grid-rows-2 gap-2 border-2 rounded-3xl border-gray-400 bg-white *:border-2 *:rounded-2xl *:border-gray-400 *:transition *:ease-in-out">
-          <div id="red" class="red btn"></div>
-          <div id="blue" class="blue btn"></div>
-          <div id="yellow" class="yellow btn"></div>
-          <div id="green" class="green btn"></div>
+  <body class="font-serif transition ease-in-out select-none">
+    <div class="h-screen w-screen fixed top-0 left-0">
+      <div class="z-0 bgShapeClass bg-cyan-300 box1pos bottom-0 left-0">
+        <div class="bgInnerShapeClass bottom-[40%] left-0"></div>
+      </div>
+      <div class="z-0 bgShapeClass bg-pink-300 box2pos top-0 right-0">
+        <div class="bgInnerShapeClass top-[40%] right-0"></div>
+      </div>
+      <div id="redflash" class="z-10 h-full w-full relative flex justify-center items-center">
+        <div class="h-full w-full flex flex-col items-center pt-8">
+          <h1><pre class="text-center font-[Monoton] max-sm:text-3xl max-lg:text-5xl lg:text-5xl">SIMON    SAYS    GAME</pre></h1>
+          <div class="flex flex-col justify-center items-center h-full">
+            <pre id="info" class="text-center font-bold mb-4 font-BigShouldersStencil max-sm:text-2xl max-md:text-3xl max-lg:text-4xl lg:text-4xl">Press anywhere to start the game</pre>
+            <div class="min-h-80 w-80 p-2 grid grid-cols-2 grid-rows-2 gap-2 border-2 rounded-3xl border-gray-400 bg-white *:border-2 *:rounded-2xl *:border-gray-400 *:transition *:ease-in-out">
+              <div id="red" class="red btn"></div>
+              <div id="blue" class="blue btn"></div>
+              <div id="yellow" class="yellow btn"></div>
+              <div id="green" class="green btn"></div>
+            </div>
+            <p id="maxScore" class="text-center mt-8 font-[Bungee] max-sm:text-2xl max-md:text-3xl max-lg:text-4xl lg:text-4xl">--- Highest Score ---</p>
+          </div>
+            
         </div>
-        <p id="maxScore" class="text-center mt-10 font-[Bungee] max-sm:text-2xl max-md:text-3xl max-lg:text-4xl lg:text-4xl">--- Highest Score ---</p>
       </div>
     </div>
     

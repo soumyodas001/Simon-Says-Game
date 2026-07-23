@@ -6,7 +6,7 @@ let btns = ["red", "blue", "yellow", "green"];
 
 let started = false;
 let level = 0;
-let p1 = document.querySelector("p");
+let p1 = document.getElementById("info");
 let p2 = document.getElementById("maxScore");
 
 function startGame(){
@@ -28,15 +28,17 @@ function btnFlash(btn){
 }
 
 function levelUp(){
-    userSeq = [];
-    level++;
-    p1.innerText = `Level - ${level}`;
+    if(started){
+        userSeq = [];
+        level++;
+        p1.innerText = `Level - ${level}`;
 
-    let randIdx = Math.floor(Math.random() * 4);
-    let randColor = btns[randIdx];
-    let randBtn = document.getElementById(`${randColor}`);
-    gameSeq.push(randColor);
-    btnFlash(randBtn);
+        let randIdx = Math.floor(Math.random() * 4);
+        let randColor = btns[randIdx];
+        let randBtn = document.getElementById(`${randColor}`);
+        gameSeq.push(randColor);
+        btnFlash(randBtn);
+    }
 }
 
 
@@ -53,15 +55,15 @@ function checkAns(idx){
             setTimeout(levelUp,800);
         }
     } else {
-        p1.innerHTML = `Game Over!<br>Your Score : ${level-1}<br>Press anywhere to restart!`;
+        p1.innerHTML = `Game Over!   Your Score : ${level-1}<br>Press anywhere to restart!`;
         if((level-1) > maxScore)
             maxScore = level - 1;
         p2.innerText = `--- Highest Score : ${maxScore} ---`;
-        document.querySelector("body").style.backgroundColor = "red";
+        document.getElementById("redflash").style.backgroundColor = "red";
         setTimeout(() => {
-            document.querySelector("body").style.backgroundColor = "white";
+            document.getElementById("redflash").style.backgroundColor = "transparent";
         }, 500);
-        setTimeout(reset, 1000);
+        setTimeout(reset, 1500);
     }
 }
 
