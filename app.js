@@ -52,7 +52,8 @@ function userFlash(btn){
 function checkAns(idx){
     if(userSeq[idx] === gameSeq[idx]){
         if(userSeq.length == gameSeq.length){
-            setTimeout(levelUp,800);
+            if(started)
+                setTimeout(levelUp,800);
         }
     } else {
         p1.innerHTML = `Game Over!   Your Score : ${level-1}<br>Press anywhere to restart!`;
@@ -63,7 +64,7 @@ function checkAns(idx){
         setTimeout(() => {
             document.getElementById("redflash").style.backgroundColor = "transparent";
         }, 500);
-        setTimeout(reset, 1500);
+        setTimeout(reset, 0);
     }
 }
 
@@ -84,8 +85,8 @@ for(btn of allBtns){
 }
 
 function reset() {
+    started = false;
     gameSeq = [];
     userSeq = [];
     level = 0;
-    started = false;
 }
