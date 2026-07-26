@@ -233,6 +233,18 @@
   .z-10 {
     z-index: 10;
   }
+  .z-20 {
+    z-index: 20;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
@@ -265,11 +277,26 @@
   .h-full {
     height: 100%;
   }
+  .h-max {
+    height: max-content;
+  }
   .h-screen {
     height: 100vh;
   }
+  .max-h-screen {
+    max-height: 100vh;
+  }
   .min-h-80 {
     min-height: calc(var(--spacing) * 80);
+  }
+  .min-h-140 {
+    min-height: calc(var(--spacing) * 140);
+  }
+  .min-h-160 {
+    min-height: calc(var(--spacing) * 160);
+  }
+  .min-h-screen {
+    min-height: 100vh;
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
@@ -277,8 +304,14 @@
   .w-full {
     width: 100%;
   }
+  .w-max {
+    width: max-content;
+  }
   .w-screen {
     width: 100vw;
+  }
+  .min-w-screen {
+    min-width: 100vw;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -312,6 +345,18 @@
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
+  }
+  .overflow-auto {
+    overflow: auto;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-scroll {
+    overflow: scroll;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
@@ -438,6 +483,18 @@
     .max-sm\:bottom-4 {
       bottom: calc(var(--spacing) * 4);
     }
+    .max-sm\:mb-8 {
+      margin-bottom: calc(var(--spacing) * 8);
+    }
+    .max-sm\:mb-10 {
+      margin-bottom: calc(var(--spacing) * 10);
+    }
+    .max-sm\:mb-100 {
+      margin-bottom: calc(var(--spacing) * 100);
+    }
+    .max-sm\:pb-8 {
+      padding-bottom: calc(var(--spacing) * 8);
+    }
     .max-sm\:text-2xl {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -463,6 +520,11 @@
     .lg\:text-5xl {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  @media (orientation: landscape) {
+    .landscape\:hidden {
+      display: none;
     }
   }
   .dark\:invisible:where(.dark, .dark *) {
