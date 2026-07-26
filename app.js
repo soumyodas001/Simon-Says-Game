@@ -90,3 +90,17 @@ function reset() {
     userSeq = [];
     level = 0;
 }
+
+// Extra features
+// Dark Mode
+
+let toggle = document.querySelector("#check");
+let mode = document.querySelector("#mode");
+
+check.addEventListener("change", (event)=>{
+    if (event.target.checked) {
+        mode.classList.add("dark");
+    } else {
+        mode.classList.remove("dark");
+    }
+});
