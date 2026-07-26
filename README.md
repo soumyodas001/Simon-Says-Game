@@ -10,6 +10,7 @@ A simple **Simon Says Game** built with **HTML, Tailwind CSS, and JavaScript**. 
 
 - Random color sequence generation
 - Progressive difficulty
+- Dark Mode
 - Flash animations
 - Score display on game over
 - Easy restart
